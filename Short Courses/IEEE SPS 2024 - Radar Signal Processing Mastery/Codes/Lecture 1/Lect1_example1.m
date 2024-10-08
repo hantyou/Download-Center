@@ -16,7 +16,7 @@ nPulse = 2;               % Number of pulses
 
 tau = 200e-6;             % Pulse width 
 
-fc = 20e3;                % Pulse carrier frequency
+fc = 20e4;                % Pulse carrier frequency
 fs = 20*fc; % Sampling frequency (samples per second)
 
 t_start = 100e-6;         % Start time 
