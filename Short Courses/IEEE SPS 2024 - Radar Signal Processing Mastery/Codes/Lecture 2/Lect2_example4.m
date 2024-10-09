@@ -93,5 +93,5 @@ for desiredAngle = -90:90 % Update desired angle from -90 to 90 degrees
     end
 
     % Pause for a moment to observe the change
-    pause(0.1);
+    pause(0.01);
 end
