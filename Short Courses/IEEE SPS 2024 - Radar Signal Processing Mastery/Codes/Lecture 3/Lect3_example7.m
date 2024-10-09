@@ -51,6 +51,34 @@ filtered_unwrap = filter(b, a, phase_unwrap);
 
 % Remove the trend from the filtered signal using detrend
 detrended_signal = detrend(filtered_unwrap);
+% Assume detrended_signal and filtered_unwrap are already defined
+nFFT_ = 1024;  % Define the FFT length
+Fs_ = 50;      % Sample rate in Hz
+
+% Detrend the filtered unwrapped signal
+detrended_signal = detrend(filtered_unwrap);
+
+% Generate the frequency vector for the FFT
+f = Fs_/2*linspace(-1, 1, nFFT_);
+
+% Compute the FFT and shift zero frequency component to the center
+fft_detrended = fftshift(fft(detrended_signal, nFFT_));
+
+% Plot the detrended signal
+figure;
+subplot(121);
+plot(detrended_signal);
+title('Detrended Signal');
+xlabel('Samples');
+ylabel('Amplitude');
+
+% Plot the magnitude of the FFT with a frequency axis
+subplot(122);
+plot(f, abs(fft_detrended));
+title('Magnitude Spectrum');
+xlabel('Frequency (Hz)');
+ylabel('Magnitude');
+axis tight;  % Optional: t
 
 % Plotting
 figure('Position', [100, 100, 800, 600]);

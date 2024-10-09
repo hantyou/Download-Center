@@ -65,7 +65,7 @@ box on
 
 % Initialize GIF parameters
 gifFilename = 'doppler_processing.gif';
-frameDelay = 0.1; % Delay between frames in seconds
+frameDelay = 0.01; % Delay between frames in seconds
 
 % Iterate over the data with a sliding window
 for start_index = 1:round(window_size/4):num_samples - window_size + 1
